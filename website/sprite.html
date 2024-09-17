@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icon/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="sprite.css">
+    <title>SPRITE CLASSES</title>
+</head>
+<body>
+  <h1 class="counter">0</h1>
+
+  <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div id="main">
+    <div id="page1">
+      <nav id="nav">
+        <img src="/images/websitelogo.png" alt="">
+        <div class="navbar">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="Pygame-Arena.html">Home</a>
+            </li>
+            <li class="nav-link Concepts">
+              <a href="#">Concepts</a>
+              <ul class="drop-down">
+                <li><a href="setup.html">Initialization & Setup</a></li>
+                <li><a href="sprite.html">Sprite Classes</a></li>
+                <li><a href="event-handling.html">Event Handling</a></li>
+                <li><a href="collisions.html">Collisions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="page2">
+      <div id="left">
+        <h1>UNDERSTANDING</h1>
+      <h1>SPRITE</h1>
+      <h1>CLASSES</h1>
+      </div>
+      <div id="right">
+        <h4>In Pygame, sprite classes represent game objects with 
+          properties like position, image, and behavior, allowing easy management, collision detection, and group operations.</h4>
+      </div>
+    </div>
+    <div id="page3">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>INTRODUCTION</h5>
+      </div>
+      <div id="info">
+        <h5>In A Typical Game A Sprite Class Are Used For One Object Like A Player Character And There Are Those Sprites That Are Used Multiple Times Such As Arrows , Bullets Or Grenades And You Can See The Example Of This 
+          In The Video Below</h5>
+      </div>
+      <div id="video">
+        <video autoplay loop muted src="/videos/sprite-classes.mp4"></video>
+      </div>
+    </div> 
+    <div id="page4">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>BASIC CONCEPT</h5>
+      </div>
+      <h4>Sprite classes are used to manage individual game objects and their interactions.</h4>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+  import pygame
+  import sys
+                
+  pygame.init()
+  screen = pygame.display.set_mode((800, 600))
+                
+  class MySprite(pygame.sprite.Sprite):
+    def __init__(self):
+    super().__init__()
+    self.image = pygame.Surface((50, 50))
+    self.image.fill((255, 0, 0))
+    self.rect = self.image.get_rect(center=(400, 300))
+                
+    sprite = MySprite()
+    all_sprites = pygame.sprite.Group(sprite)
+                
+    running = True
+    while running:
+      for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+      running = False
+                
+      screen.fill((255, 255, 255))
+      all_sprites.draw(screen)
+      pygame.display.flip()
+                
+pygame.quit()
+sys.exit()                
+  </code></pre>
+  </div>
+<div id="output">
+  <img src="/images/image1.png" alt="Example Output Image">
+  </div>
+  </div>
+      <h3>
+          The code above initializes Pygame and sets up an 800x600 window. It creates a red square sprite using the `MySprite` class and manages it with a sprite group. The main loop handles events, updates the screen, and displays the sprite.
+      </h3>
+  </div>  
+    <div id="page5">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>SPRITE GROUPS</h5>
+      </div>
+      <h3>
+          In the Concept of Sprites, an individual sprite can be handled by using the sprite class, but when there are more than one identical Sprites or Objects, we need a way to work with them. For this, Pygame uses its own way to hold multiple sprite objects together called the Group() class.
+      </h3>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+  import pygame
+  import sys
+  
+  pygame.init()
+  screen = pygame.display.set_mode((800, 600))
+  
+  class MySprite(pygame.sprite.Sprite):
+      def __init__(self, color, position):
+          super().__init__()
+          self.image = pygame.Surface((50, 50))
+          self.image.fill(color)
+          self.rect = self.image.get_rect()
+          self.rect.topleft = position
+  
+  all_sprites = pygame.sprite.Group()
+  
+  sprite1 = MySprite((255, 0, 0), (100, 100))
+  sprite2 = MySprite((0, 255, 0), (200, 200))
+  sprite3 = MySprite((0, 0, 255), (300, 300))
+  
+  all_sprites.add(sprite1, sprite2, sprite3)
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              pygame.quit()
+              sys.exit()
+      
+      screen.fill((255, 255, 255))
+      all_sprites.draw(screen)
+      pygame.display.flip()
+              </code></pre>
+          </div>
+          <div id="output">
+              <img src="/images/image2.png" alt="Example Output Image">
+          </div>
+      </div>
+      <h3>
+          This Pygame code initializes a window with dimensions of 800x600 pixels, creates three square-shaped sprites each filled with a different color which are red , green and blue , and they placed at specific positions on the screen with white background. The program enters a continuous loop where it updates the screen in real-time, ensuring that the sprites remain visible while checking for user events, such as clicking the close button on the window which are not given in this code as this is only for understaanding. If you want to learn more about them you can visit the Official PyGame Website. If a close event is detected, the program exits gracefully, shutting down the Pygame environment.
+      </h3>
+  </div>
+  <div id="page6">
+    <div id="heading">
+      <div id="gola"></div>
+      <h5>CONCLUSION</h5>
+  </div>
+  <h3>This page shows a basic example of how to use Pygame to display a simple red square on the screen. You'll see how to set up Pygame, create a sprite (a small image or shape), and continuously update the screen to show the sprite. 
+    This example is a great starting point for learning how to work with sprites and build more complex games.</h3>
+    <div id="heading-2">
+      <div id="gola-2"></div>
+      <h4>OFFICIAL DOCUMENTATION</h4>
+  </div>
+    <p>For more detailed information, visit the <a href="https://www.pygame.org/docs/ref/sprite.html" class="button">Pygame Sprite Documentation</a></p>
+  </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="sprite.js"></script>
+</body>
+</html>

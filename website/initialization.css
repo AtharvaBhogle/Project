@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'font-light';
+    font-weight: 100;
+    src: url(/fonts/NeueHaasDisplayLight.ttf);
+}
+@font-face {
+    font-family: 'font-medium';
+    src: url(/fonts/NeueHaasDisplayMediu.ttf);
+}
+@font-face {
+    font-family: 'font-roman';
+    font-weight: 200;
+    src: url(/fonts/NeueHaasDisplayRoman.ttf);
+}
+@font-face {
+    font-family: 'pricedown';
+    font-weight: 200;
+    src: url(/fonts/pricedownbl.otf);
+}
+@font-face {
+    font-family: 'rumble';
+    src: url('/fonts/Rumble.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: font-roman;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #EFEAE3;
+    /* overflow-y: auto; Shows scrollbar only when needed */
+}
+
+#main {
+    position: relative;
+    background-color: black;
+    z-index: 1; /* Ensure it's below the overlay initially */
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+}
+
+.bar {
+    width: 10vw;
+    height: 105vh;
+    background: linear-gradient(to right, red, brown);
+}
+
+.counter {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 1000;
+    background: linear-gradient(to right, red, brown);
+    color: black;
+    padding: 0.2rem 0.4rem;
+    font-size: 20vw;
+    font-family: pricedown;
+}
+
+.overlay.inactive {
+    display: none; /* Hide the overlay after animation */
+}
+
+#main.active {
+    z-index: 1001; /* Higher z-index to make it interactable */
+}
+
+#page1 {
+    min-height: 20vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+}
+
+nav {
+    padding: 1vw 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav img {
+    width: 400px;
+}
+
+.navbar {
+    margin: auto;
+    padding: 0.5rem 1.5rem;
+    background-color: EFEAE3;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 110px;
+    font-family: font-medium;
+    font-size: 1.3vw;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    color: black;
+}
+
+.nav-link, .drop-down li {
+    list-style: none;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: currentColor;
+    transition: all ease 0.7s;
+}
+
+.drop-down {
+    position: absolute;
+    padding: 0.5rem 0;
+    margin: 0.5rem -0.5rem;
+    background: antiquewhite;
+    color: black;
+    border-radius: 0.5rem;
+    font-size: 14px;
+    display: none;
+}
+
+.nav-link:hover {
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.Concepts:hover .drop-down {
+    display: block;
+}
+
+.drop-down li:hover {
+    background: black;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+#page2 {
+    min-height: 70vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 2vw 2vw;
+    align-items: flex-end;
+    display: flex;
+    text-align: left;
+    font-size: 2.9vw;
+    border-bottom: 1px solid #0000003c;
+}
+#right h4{
+    font-size: 2vw;
+    text-align: right;
+}
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    /* background-color: #670989; */
+    padding: 3vw 2vw;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+#video {
+    position: relative;
+    padding-bottom: 56.25%; /* This maintains a 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+  }
+  
+  #video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+#heading {
+    display: flex;
+    align-items: center;
+}
+
+#heading h5{
+    /* font-family: pricedown; */
+    font-size: 2.5vw;
+}
+
+#gola {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    background-color: #fe320a;  /* Orange-red color */
+    margin-right: 10px;
+}
+
+#info h5{
+    padding: 1vw 1vw;
+    /* background-color: #670989; */
+    font-size: 2vw;
+}
+
+#page3 #info{
+    margin-bottom: 5px;
+}
+
+#page4{
+    background-color: #EFEAE3;
+    min-height: 70vh;
+    width: 100%;
+    padding: 2vw 2vw;
+}
+
+#page4 h5{
+    font-size: 2.5vw;
+}
+
+#page4 h4{
+    padding: 1vw 0;
+    font-size: 2vw
+}
+
+pre {
+    background-color: #32315b;
+    padding: 0.6vw 2vw;
+    border-radius: 19px;
+    overflow-x: auto; /* Scroll for long code lines */
+    border: 1px solid #ddd;
+    width: 100%; /* Ensure it fits the container */
+    box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    color: #d63384;
+    font-size: 20px;
+}
+
+pre code {
+    display: flex;
+    line-height: 1.5; /* Spacing between lines */
+    word-wrap: break-word; /* Avoid overflow */
+}
+
+#page4 h3{
+    padding-top: 1.5vw;
+    font-size: 2vw;
+}
+
+
+#page5 {
+    background-color: #EFEAE3;
+    min-height: 70vh;
+    width: 100%;
+    padding: 2vw;
+}
+
+#heading {
+    display: flex;
+    align-items: center;
+}
+
+#heading h5 {
+    /* font-family: pricedown; */
+    font-size: 2.5vw;
+}
+
+#gola {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    background-color: #fe320a;  /* Orange-red color */
+    margin-right: 10px;
+}
+
+#page5 h3 {
+    font-size: 2vw;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+.code-example {
+    padding: 1.3vw 2vw;
+    display: flex;
+    gap: 2vw; 
+    align-items: flex-start;
+}
+
+.code-container {
+    flex: 1; 
+    max-width: 75%;
+}
+
+#output {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#output img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#page6{
+    background-color: #EFEAE3;
+    min-height: 60vh;
+    width: 100%;
+    padding: 2vw;
+}
+
+#page6 h3{
+    font-size: 2vw;
+}
+
+#page6 #heading-2{
+    display: flex;
+    align-items: center;
+    font-size: 2.5vw;
+    margin-top: 2vw;
+}
+
+#gola-2 {
+    height: 1.5vw;
+    width: 1.5vw;
+    border-radius: 50%;
+    background-color: #fe320a;  /* Orange-red color */
+    margin-right: 10px;
+}
+
+#page6 p{
+    padding-top: 0.7vw;
+    font-size: 1.8vw;
+    font-family: pricedown;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, red, brown);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    /* transition: background 2s ease; Ensure this line is correctly written */
+}

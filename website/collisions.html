@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icon/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="collisions.css">
+    <title>COLLISIONS IN PYGAME</title>
+</head>
+<body>
+  <h1 class="counter">0</h1>
+
+  <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div id="main">
+    <div id="page1">
+      <nav id="nav">
+        <img src="/images/websitelogo.png" alt="">
+        <div class="navbar">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="Pygame-Arena.html">Home</a>
+            </li>
+            <li class="nav-link Concepts">
+              <a href="#">Concepts</a>
+              <ul class="drop-down">
+<li><a href="setup.html">Initialization & Setup</a></li>
+<li><a href="sprite.html">Sprite Classes</a></li>
+<li><a href="event-handling.html">Event Handling</a></li>
+<li><a href="collisions.html">Collisions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    
+    <div id="page2">
+      <div id="left">
+        <h1>UNDERSTANDING</h1>
+      <h1>COLLISIONS</h1>
+      </div>
+      <div id="right">
+        <h4>Collisions in Pygame are fundamental for creating interactions between objects. This concept is essential for implementing game mechanics like player-object interactions, scoring, and much more.</h4>
+      </div>
+    </div>
+    
+    <div id="page3">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>INTRODUCTION</h5>
+      </div>
+      <div id="info">
+        <h5>In Pygame, collisions are typically detected using rectangular or circular bounding boxes around objects. These collisions can trigger specific actions or events in your game. 
+          The video below shows different types of collision like Rectangle , Point and Line based collisions.</h5>
+      </div>
+      <div id="video">
+        <video id="collision-video" autoplay loop muted src="/videos/collision.mp4"></video>
+      </div>
+    </div> 
+    
+    <div id="page4">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>BASIC CONCEPT</h5>
+      </div>
+      <h4>One of the simplest ways to detect collisions in Pygame is by using `pygame.Rect.colliderect()` for rectangle-based objects.</h4>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+import pygame
+import sys
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+clock = pygame.time.Clock()
+
+player = pygame.Rect(100, 100, 50, 50)
+obstacle = pygame.Rect(300, 300, 50, 50)
+speed = 2  # Reduced movement speed
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        player.x -= speed
+    if keys[pygame.K_RIGHT]:
+        player.x += speed
+    if keys[pygame.K_UP]:
+        player.y -= speed
+    if keys[pygame.K_DOWN]:
+        player.y += speed
+
+    if player.colliderect(obstacle):
+        print("Collision detected!")
+
+    screen.fill((255, 255, 255))
+    pygame.draw.rect(screen, (0, 0, 255), player)
+    pygame.draw.rect(screen, (255, 0, 0), obstacle)
+    pygame.display.flip()
+
+    clock.tick(60)  #This Limits the FPS to 60 FPS
+
+pygame.quit()
+sys.exit()
+
+              </code></pre>
+          </div>
+          <div id="output">
+            <img src="/images/collision1.png" alt="Basic Collision Example Output Image">
+          </div>
+      </div>
+      <h3>In this example, a rectangle representing the player moves with arrow keys, and when it collides with an obstacle, a message is printed in the console. This forms the foundation of collision detection in 2D games.</h3>
+  </div>  
+    
+  <div id="page5">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>ADVANCED COLLISION HANDLING</h5>
+      </div>
+      <h3>Pygame also supports more advanced collision detection techniques, such as using sprite groups or pixel-perfect collisions for irregularly shaped objects.</h3>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+import pygame
+import sys
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill((0, 0, 255))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (100, 100)
+    
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= 5
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += 5
+        if keys[pygame.K_UP]:
+            self.rect.y -= 5
+        if keys[pygame.K_DOWN]:
+            self.rect.y += 5
+
+class Obstacle(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill((255, 0, 0))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (300, 300)
+
+player = Player()
+obstacle = Obstacle()
+
+all_sprites = pygame.sprite.Group()
+all_sprites.add(player)
+all_sprites.add(obstacle)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    
+    all_sprites.update()
+    
+    if pygame.sprite.collide_rect(player, obstacle):
+        print("Collision detected using sprite group!")
+
+    screen.fill((255, 255, 255))
+    all_sprites.draw(screen)
+    pygame.display.flip()
+
+pygame.quit()
+sys.exit()
+
+              </code></pre>
+          </div>
+          <div id="output">
+              <img src="/images/collision2.png" alt="Advanced Collision Example Output Image">
+          </div>
+      </div>
+      <h3>This example uses Pygame’s `pygame.sprite.Sprite` and `pygame.sprite.Group` classes for managing sprites and detecting collisions between them. The code demonstrates how to handle more complex scenarios involving multiple objects in your game.In this example the collision is more accurate and it only  happens when the 2 objects come in contact with each other</h3>
+  </div>
+
+  <div id="page6">
+    <div id="heading">
+      <div id="gola"></div>
+      <h5>CONCLUSION</h5>
+  </div>
+  <h3>This page provides a basic and advanced understanding of collision detection in Pygame. Whether you're detecting simple rectangle collisions or implementing sprite-based collision detection, understanding these techniques is crucial for building interactive games.</h3>
+    <div id="heading-2">
+      <div id="gola-2"></div>
+      <h4>OFFICIAL DOCUMENTATION</h4>
+  </div>
+    <p>For more detailed information, visit the <a href="https://www.pygame.org/docs/ref/sprite.html" class="button">Pygame Sprite Documentation</a></p>
+  </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="collisions.js"></script>
+  <script>
+
+  </script>
+</body>
+</html>

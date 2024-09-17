@@ -1,0 +1,396 @@
+
+
+
+In Pygame, a sprite is like a game piece or character that you control or interact with in a video game. Think of a sprite as any object in your game that moves or changes, like a player, enemy, or collectible item.
+          To help you manage these objects easily, Pygame offers a special tool called the Sprite class. This class is like a blueprint that defines how your game objects look, move, and interact with each other.</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+#left h2{
+    margin-bottom: 100px;
+    font-family: font-medium;
+    font-size: 50px;
+}
+
+49 for that moving div
+
+
+#page1 video{
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    margin-top: 3vw;
+}
+
+<video src="/videos/example.mp4"></video>
+
+/* SOUND AND MUSIC */
+/* .sound-slide{
+    border-radius: 8px;
+    background: linear-gradient(to bottom, rgb(114, 113, 113), rgb(172, 169, 169));
+} */
+<!-- <div class="swiper-slide sound-slide">
+                <div class="heading">
+                  <h1>SOUND &</h1>
+                  <h1>MUSIC</h1>
+                </div>
+                <div class="info">
+                  <h4>Pygame’s `mixer` module controls sound effects and background music,
+                     including playback, volume, and mixing.</h4>
+                     <a href="sprite.html">KNOW MORE</a>
+                </div>
+              </div> -->
+
+
+
+
+
+
+
+<button>PLAY</button>
+///////////////////////////////////////////////////////////////NAVBAR//////////////////////////////////////////////
+<div class="nav-part2">
+              <h4><a href="index.html">TEST</a></h4>
+            </div>
+
+            .swiper-slide .heading{
+                height: 30%;
+                /* background-color: #fe320a; */
+                width: 100%;
+                font-family: rumble;
+                font-size: 1.2vw;
+                padding-top: 1vw;
+                display: inline-block;
+            }
+
+//////////////////////////////////page4////////////////////
+#page-4{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color:  lightblue; */
+    padding-right:  2vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+    background-color: #EFEAE3;
+}
+
+/* EXPERIMENT VIDEO DISPLAYING */
+/* Hide the video by default */
+/* Common styles for .elem elements */
+.elem {
+    position: relative;
+    /* Add any other styles specific to .elem */
+}
+
+/* Hide the video inside each .elem by default */
+.elem video {
+    display: none;
+}
+
+/* Styles for the fixed-image div */
+#fixed-image {
+    height: 30vw;
+    width: 23vw;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Prevent video overflow */
+}
+
+/* Make sure the video fills the entire fixed-image div */
+#fixed-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ///////////////////////////// */
+.elem{
+    height: 130px;
+    width: 100%;
+    position: relative;
+    /* background-color: orange; */
+    border-bottom: 1px solid rgb(168, 167, 167);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.elem h2{
+    font-size: 3vw;
+    position: relative;
+    z-index: 9;
+    margin-left: 2vw;
+}
+
+.elem button{
+    z-index: 9;
+    margin-right: 2vw;
+}
+.elem .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.3s;
+}
+.elem:hover .overlay{
+    top: 0;
+}
+
+#fixed-image {
+    height: 30vw;
+    width: 23vw;
+    /* background-color: red; */
+    border-radius: 15px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+#heading{
+    display: flex;
+    align-items:center;
+}
+#heading #gola{
+    height: 1.1vw;
+    width: 1.1vw;
+    margin-right: -2px;
+}
+#heading h5{
+    font-size: 1.5vw;
+    margin-left: 10px;
+}
+
+#elem-container button{
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1.6vw;
+    padding: 0.7vw 1.5vw;
+    font-family: font-roman;
+    border: none;
+    background-color: #000000 ;
+    color: white;
+    /* background: linear-gradient(to right, rgb(208, 57, 57),rgb(249, 249, 64)); */
+}
+
+//////////////////////////////////////////
+#nav-part2{
+    display: flex;
+    align-items: center;
+}
+.nav-part2 h4{
+    padding: 10px 20px;
+    color: #000000bb;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-weight: 500;
+    position: relative;
+    font-size: 17px; 
+    transition: all ease 0.4s;
+    overflow: hidden;
+}
+.nav-part2 h4::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+.nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+.nav-part2 h4 a{
+    text-decoration: none;
+    color: #000000bb;
+    position: relative;
+    z-index: 9;
+}
+.nav-part2 h4:hover a{
+    color: white;
+}
+
+
+
+????????????????????????????????????????????????????????????
+@font-face {
+    font-family: 'font-light';
+    font-weight: 100;
+    src: url(/fonts/NeueHaasDisplayLight.ttf);
+}
+@font-face {
+    font-family: 'font-medium';
+    src: url(/fonts/NeueHaasDisplayMediu.ttf);
+}
+@font-face {
+    font-family: 'font-roman';
+    font-weight: 200;
+    src: url(/fonts/NeueHaasDisplayRoman.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: font-roman;
+}
+html,body{
+    height: 3000px;
+    width: 100%;
+    background-color: #EFEAE3;
+
+}
+#page1{
+    min-height: 80vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0 2vw;
+}
+nav{
+    padding: 1vw 0vw;
+    width: 100%;
+    /* <!background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+img{
+    width: 400px;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+}
+.nav-part2 h4{
+    padding: 10px 20px;
+    color: #000000bb;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-weight: 500;
+    position: relative;
+    font-size: 17px; 
+    transition: all ease 0.4s;
+    overflow: hidden;
+
+}
+.nav-part2 h4::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+.nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+.nav-part2 h4 a{
+    text-decoration: none;
+    color: #000000bb;
+    position: relative;
+    z-index: 9;
+}
+.nav-part2 h4:hover a{
+    color: white;
+}
+
+#center{
+    height: 67vh;
+    width: 100%;
+    /* background-color: orange; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 3vw;
+}
+#left h3{
+    width: 35vw;
+    font-size: 25px;
+}
+#center h1{
+    font-size: 7.5vw;
+    line-height: 8vw;
+    text-align: right;
+}
+#page-2{
+    min-height: 30vh;
+    width: 100%;
+    /* background-color: #fe320a; */
+    padding: 5vw 0;
+}
+#moving-text{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+#moving-text::-webkit-scrollbar{
+    display: none;
+}
+.con{
+    /* background-color: lightblue; */
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 9s; 
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#moving-text h1{
+    font-size: 7.5vw;
+    font-family: font-medium;
+    display: inline-block;
+}
+#gola{
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;
+    background-color: #fe320a;
+    display: inline-block;
+    margin: 1vw 1.7vw;
+}
+
+@keyframes move{
+    from{  
+        transform: translateX(0); /* start position */
+    }
+    to{
+        transform: translateX(-100%); /* end position */
+    }
+}
+#page-3{
+    min-height: 130vh;
+    width: 100%;
+    padding: 0 2vw;
+}
+#page-3 video{
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+}

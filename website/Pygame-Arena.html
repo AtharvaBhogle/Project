@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pygame Arena</title>
+    <link rel="shortcut icon" href="/icon/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  </head>
+  <body>
+    <div id="loader">
+      <h1>INNOVATE</h1>
+      <h1>PLAY</h1>
+      <h1>ENJOY</h1>
+    </div>
+    <div id="fixed-image"></div>
+    <div id="main"><!--wrapper div cuz using  locomotive-->
+        <div id="page1">
+           <nav id="nav">
+            <img src="/images/websitelogo.png" alt="">
+            <div class="navbar">
+              <ul class="nav-links">
+                <li class="nav-link">
+                  <a href="#">Home</a>
+                </li>
+                <li class="nav-link Concepts">
+                  <a href="#">Concepts</a>
+                  <ul class="drop-down">
+                    <li><a href="setup.html">Initialization & Setup</a></li>
+                    <li><a href="sprite.html">Sprite Classes</a></li>
+                    <li><a href="event-handling.html">Event Handling</a></li>
+                    <li><a href="collisions.html">Collisions</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+           </nav>
+           <div id="center">
+            <div id="left">
+              <h3>Experience the best of Python and Pygame at our hub! Play through our hand-crafted games and see what creativity and coding can achieve. 
+                </h3>
+            </div>
+            <div id="right">
+              <h1>
+                Python <br>
+                Powered <br>
+                 Entertainment</h1>
+            </div>
+           </div>
+           <!--later move this to new div <video autoplay loop muted src="/videos/example.mp4"></video> -->
+        </div>
+        <div id="page-2">
+          <div id="moving-text">
+              <div class="con">
+                <h1>WELCOME</h1>
+                <div id="gola"></div>
+                <h1>TO</h1>
+                <div id="gola"></div>
+                <h1>PYGAME</h1>
+                <div id="gola"></div>
+                <h1>ARENA</h1>
+                <div id="gola"></div>
+              </div>
+              <div class="con">
+                <h1>WELCOME</h1>
+                <div id="gola"></div>
+                <h1>TO</h1>
+                <div id="gola"></div>
+                <h1>PYGAME</h1>
+                <div id="gola"></div>
+                <h1>ARENA</h1>
+                <div id="gola"></div>
+              </div>
+              <div class="con">
+                <h1>WELCOME</h1>
+                <div id="gola"></div>
+                <h1>TO</h1>
+                <div id="gola"></div>
+                <h1>PYGAME</h1>
+                <div id="gola"></div>
+                <h1>ARENA</h1>
+                <div id="gola"></div>
+              </div>
+           </div>
+        </div>
+        <div id="page-3">
+          <video autoplay loop muted src="/videos/example.mp4"></video>
+        </div>
+        <div id="page-3-bottom">
+          <h1>
+            Pygame offers tools for handling graphics, sound, and input, enabling image manipulation, text rendering, sound playback, and sprite management for efficient collision detection and animation, supporting various file formats,
+             making game development accessible.</h1>
+            
+             <div id="bottom-part2">
+              <img src="/images/pygame-image.webp" alt="">
+              <h3>Pygame also encourages good programming practices, such as organizing your code into functions and classes, which helps in managing larger projects. With Pygame
+                , the possibilities are endless, and the only limit is your imagination.</h3>
+             </div>
+        </div>
+        <div id="page-4">
+          <div id="heading">
+              <div id="gola"></div>
+              <h5>FEATURED PROJECTS</h5>
+          </div>
+          <div id="elem-container">
+              <!-- First Game -->
+              <div id="elem1" class="elem">
+                  <div class="overlay"></div>
+                  <h2>Vampire Survivor</h2>
+                  <video width="500" muted loop id="game-video-1">
+                      <source src="/videos/Vampire Shooter.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+      
+                  <!-- Download Button for First Game -->
+                  <a href="https://drive.google.com/uc?export=download&id=1ZkDo3J9xTBMhuSg7XSIK0RDRov7Mtksw" class="download-button">
+                      <button>Download</button>
+                  </a>
+              </div>
+      
+              <!-- Second Game -->
+              <div id="elem2" class="elem">
+                  <div class="overlay"></div>
+                  <h2>Space Shooter</h2>
+                  <video width="500" muted loop id="game-video-2">
+                      <source src="/videos/spaceshooter(no audio).mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+      
+                  <!-- Download Button for Second Game -->
+                  <a href="https://drive.google.com/uc?export=download&id=1GnQVlXZ44FbqUIIxIna4O5EXxvxWzbgE" class="download-button">
+                      <button>Download</button>
+                  </a>
+              </div>
+      
+              <!-- Third Game -->
+              <div id="elem3" class="elem">
+                  <div class="overlay"></div>
+                  <h2>Platform</h2>
+                  <video width="500" muted loop id="game-video-3">
+                      <source src="/videos/Platfrom game.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+      
+                  <!-- Download Button for Third Game -->
+                  <a href="https://drive.google.com/uc?export=download&id=YOUR_THIRD_GAME_FILE_ID" class="download-button">
+                      <button>Download</button>
+                  </a>
+              </div>
+          </div>
+      </div>
+                      
+       <div id="page-5">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide setup-slide">
+                <div class="heading">
+                  <h1>INITIALIZATION &</h1>
+                  <h1>SETUP</h1>
+                </div>
+                <div class="info setup-info">
+                  <h4>Initialization and setup in Pygame involve starting the engine and creating the game window, preparing the program to
+                     handle events and draw graphics.</h4>
+                     <a href="setup.html">KNOW MORE</a>
+                </div>
+              </div>
+              <div class="swiper-slide sprite-class">
+                <div class="heading">
+                  <h1>SPRITE</h1>
+                  <h1>CLASSES</h1>
+                </div>
+                <div class="info sprite-info">
+                  <h4>Sprite classes in Pygame manage game objects, control behavior, handle rendering, and make collision detection more 
+                    efficient using sprite groups.</h4>
+                    <a href="sprite.html">KNOW MORE</a>
+                </div>
+              </div>
+              <div class="swiper-slide event-handling">
+                <div class="heading">
+                  <h1>EVENT</h1>
+                  <h1>HANDLING</h1>
+                </div>
+                <div class="info event-info">
+                  <h4>Event handling in Pygame captures and responds to user interactions, like keyboard presses,
+                     mouse clicks, or other input events.</h4>
+                     <a href="event-handling.html">KNOW MORE</a>
+                </div>
+              </div>
+              <div class="swiper-slide collision-slide">
+                <div class="heading">
+                  <h1>Collisions </h1>
+                </div>
+                <div class="info collision-info">
+                  <h3>Collisions in Pygame detect interactions between sprites, allowing responses to overlaps 
+                    or contact between objects.</h3>
+                    <a href="collisions.html">KNOW MORE</a>
+                </div>
+              </div>
+          </div>
+        </div>
+       </div>
+       <div id="page-6">
+       </div>
+    </div>  
+    <div id="footer">
+      <div id="footer-div">
+        <h2>Thank You for Visiting! We appreciate your interest in our Pygame projects. We hope you enjoyed exploring the games and learning about the features. Feel free to reach
+           out with any questions or feedback. Happy gaming!</h2>
+      </div>
+      <h1>PYGAME ARENA</h1> 
+     </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+

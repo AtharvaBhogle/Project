@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icon/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="initialization.css">
+    <title>INITIALIZATION & SETUP IN PYGAME</title>
+</head>
+<body>
+  <h1 class="counter">0</h1>
+
+  <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div id="main">
+    <div id="page1">
+      <nav id="nav">
+        <img src="/images/websitelogo.png" alt="">
+        <div class="navbar">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="Pygame-Arena.html">Home</a>
+            </li>
+            <li class="nav-link Concepts">
+              <a href="#">Concepts</a>
+              <ul class="drop-down">
+<li><a href="setup.html">Initialization & Setup</a></li>
+<li><a href="sprite.html">Sprite Classes</a></li>
+<li><a href="event-handling.html">Event Handling</a></li>
+<li><a href="collisions.html">Collisions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    
+    <div id="page2">
+      <div id="left">
+        <h1>UNDERSTANDING</h1>
+      <h1>INITIALIZATION</h1>
+      <h1>AND SETUP</h1>
+      </div>
+      <div id="right">
+        <h4>Initializing Pygame and setting up your game window are the first steps to starting any Pygame project. This process includes setting up the display, defining the frame rate, and ensuring that your game is ready to run.</h4>
+      </div>
+    </div>
+    
+    <div id="page3">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>INTRODUCTION</h5>
+      </div>
+      <div id="info">
+        <h5>Before diving into game development with Pygame, it’s important to understand the initialization process. This includes importing the library, initializing its modules, and creating a game window. The video below gives a brief overview of how to set up your first Pygame project.</h5>
+      </div>
+      <div id="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/y9VG3Pztok8?si=F993BfpIeljeJACP" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+       <div id="page4">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>BASIC INITIALIZATION</h5>
+      </div>
+      <h4>The basic steps for initializing Pygame involve importing the library, initializing it, and setting up the display surface.</h4>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+  import pygame
+  import sys
+  
+  # Initialize Pygame
+  pygame.init()
+  
+  # Set up the display
+  screen = pygame.display.set_mode((800, 600))
+  pygame.display.set_caption("Basic Pygame Setup")
+  
+  # Main loop
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+      
+      # Fill the screen with a color
+      screen.fill((0, 0, 0))
+      
+      # Update the display
+      pygame.display.flip()
+  
+  # Quit Pygame
+  pygame.quit()
+  sys.exit()
+              </code></pre>
+          </div>
+          <div id="output">
+            <img src="/images/setup1.png" alt="Basic Initialization Example Output Image">
+          </div>
+      </div>
+      <h3>This example demonstrates the basic setup process in Pygame: initializing the library, creating a window, and running a loop to keep the window open. This forms the foundation of any Pygame application.</h3>
+  </div>  
+    
+  <div id="page5">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>ADVANCED SETUP OPTIONS</h5>
+      </div>
+      <h3>Pygame offers various advanced setup options, such as setting the frame rate, handling different screen resolutions, and adding custom icons or background music.</h3>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+import pygame
+import sys
+import os
+
+pygame.init()
+
+screen = pygame.display.set_mode((400, 400))
+pygame.display.set_caption("Advanced Pygame Setup")
+
+clock = pygame.time.Clock()
+
+icon_path = 'images/download.png'
+if os.path.isfile(icon_path):
+    icon = pygame.image.load(icon_path)
+    pygame.display.set_icon(icon)
+
+music_path = 'music/sample.wav'
+if os.path.isfile(music_path):
+    pygame.mixer.music.load(music_path)
+    pygame.mixer.music.play(-1)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    
+    screen.fill((0, 0, 0))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+sys.exit()
+
+              </code></pre>
+          </div>
+          <div id="output">
+              <img src="/images/setup2.png" alt="Advanced Setup Example Output Image">
+          </div>
+      </div>
+      <h3>The code initializes Pygame, sets up a window with a custom icon, and plays background music. 
+        It runs a loop to keep the window open, updates the display with a black screen, and maintains a 60 FPS frame rate.To run this code correctly make sure you edit the paths to image and music depending on your project settings</h3>
+  </div>
+
+  <div id="page6">
+    <div id="heading">
+      <div id="gola"></div>
+      <h5>CONCLUSION</h5>
+  </div>
+  <h3>This page provides a detailed understanding of the initialization and setup process in Pygame. From basic window creation to advanced options like setting the frame rate and adding music, proper setup is crucial for creating a smooth and engaging game.</h3>
+    <div id="heading-2">
+      <div id="gola-2"></div>
+      <h4>OFFICIAL DOCUMENTATION</h4>
+  </div>
+    <p>For more detailed information, visit the <a href="https://www.pygame.org/docs/ref/display.html" class="button">Pygame Display Documentation</a></p>
+  </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="initialization.js"></script>
+  <script>
+
+  </script>
+</body>
+</html>

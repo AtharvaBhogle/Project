@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icon/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="event-handling.css">
+    <title>EVENT HANDLING</title>
+</head>
+<body>
+  <h1 class="counter">0</h1>
+
+  <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div id="main">
+    <div id="page1">
+      <nav id="nav">
+        <img src="/images/websitelogo.png" alt="">
+        <div class="navbar">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="Pygame-Arena.html">Home</a>
+            </li>
+            <li class="nav-link Concepts">
+              <a href="#">Concepts</a>
+              <ul class="drop-down">
+                <li><a href="setup.html">Initialization & Setup</a></li>
+                <li><a href="sprite.html">Sprite Classes</a></li>
+                <li><a href="event-handling.html">Event Handling</a></li>
+                <li><a href="collisions.html">Collisions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    
+    <div id="page2">
+      <div id="left">
+        <h1>UNDERSTANDING</h1>
+      <h1>EVENT</h1>
+      <h1>HANDLING</h1>
+      </div>
+      <div id="right">
+        <h4>In Pygame, event handling is essential for responding to user input, such as key presses, mouse movements, and window events. This concept is crucial for interactive games and applications.</h4>
+      </div>
+    </div>
+    
+    <div id="page3">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>INTRODUCTION</h5>
+      </div>
+      <div id="info">
+        <h5>Event handling in Pygame allows you to manage interactions within your game. It involves capturing events like keystrokes and mouse actions and then executing code based on those events. The video below explains the concept in short summary</h5>
+      </div>
+      <div id="video">
+        <video id="event-video" autoplay loop muted src="/videos/event_handler.mp4"></video>
+      </div>
+    </div> 
+    
+    <div id="page4">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>BASIC CONCEPT</h5>
+      </div>
+      <h4>The Pygame event loop continuously checks for user input events and handles them accordingly.</h4>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+  import pygame
+  import sys
+  
+  pygame.init()
+  screen = pygame.display.set_mode((800, 600))
+  
+  running = True
+  while running:
+      for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+              running = False
+          elif event.type == pygame.KEYDOWN:
+              if event.key == pygame.K_ESCAPE:
+                  running = False
+          elif event.type == pygame.MOUSEBUTTONDOWN:
+              print(f"Mouse clicked at {event.pos}")
+      
+      screen.fill((255, 255, 255))
+      pygame.display.flip()
+  
+  pygame.quit()
+  sys.exit()
+              </code></pre>
+          </div>
+          <div id="output">
+            <img src="/images/event1.png" alt="Advanced Example Output Image">
+          </div>
+      </div>
+      <h3>The code above sets up a basic Pygame window and handles three types of events: quitting the window, pressing the escape key, and clicking the mouse. The event loop continuously monitors for these events and responds accordingly. As you can see in the terminal of the image , there are the co-ordinates of the point where the mouse was clicked.</h3>
+  </div>  
+    
+  <div id="page5">
+      <div id="heading">
+          <div id="gola"></div>
+          <h5>ADVANCED EVENT HANDLING</h5>
+      </div>
+      <h3>Pygame supports a variety of event types, allowing you to build complex interactive games. For example, you can detect multiple key presses, handle joystick input, or manage custom events.</h3>
+      <div class="code-example">
+          <div class="code-container">
+              <pre><code>
+import pygame
+import sys
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                print("Spacebar pressed")
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                print(f"Left mouse button clicked at {event.pos}")
+    
+    screen.fill((255, 255, 255))
+    pygame.display.flip()
+
+pygame.quit()
+sys.exit()
+
+              </code></pre>
+          </div>
+          <div id="output">
+              <img src="/images/event2.png" alt="Advanced Example Output Image">
+          </div>
+      </div>
+      <h3>This example expands on basic event handling by adding detection for the spacebar and left mouse button clicks as well as the co-ordinates where it was clicked. It provides a foundation for more sophisticated interactions in your game.</h3>
+  </div>
+
+  <div id="page6">
+    <div id="heading">
+      <div id="gola"></div>
+      <h5>CONCLUSION</h5>
+  </div>
+  <h3>This page provides a basic and advanced understanding of event handling in Pygame. From simple user inputs like key presses to more complex event management, handling events is crucial for building interactive games.</h3>
+    <div id="heading-2">
+      <div id="gola-2"></div>
+      <h4>OFFICIAL DOCUMENTATION</h4>
+  </div>
+    <p>For more detailed information, visit the <a href="https://www.pygame.org/docs/ref/event.html" class="button">Pygame Event Documentation</a></p>
+  </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="event-handling.js"></script>
+  <script>
+
+  </script>
+</body>
+</html>
